@@ -8,5 +8,5 @@ module.exports = (dir) => {
       modules.push({ module: require(module.module), data: module });
     }
   }
-  require("./serve")(modules,config.port);
+  require("./serve")(modules, config.port);
 };

@@ -3,6 +3,9 @@ module.exports = {
     {
       module: require("./test.js"),
     },
+    {
+      module: require("./tailwind.js"),
+    },
   ],
-  port: 3000
+  port: 3000,
 };
