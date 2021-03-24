@@ -15,6 +15,10 @@
     "1host": "bin/1host.js"
   },
   "scripts": {
-    "start": "1host"
+    "start": "1host",
+    "lint": "prettier --write \"**/*.js\""
+  },
+  "devDependencies": {
+    "prettier": "^2.2.1"
   }
 }
