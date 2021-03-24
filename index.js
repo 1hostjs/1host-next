@@ -5,3 +5,5 @@ const consola = require('consola')
 consola.success('Built!')
 consola.info('Reporter: Some info')
 consola.error('Uh, oh. 1host failed.')
+consola.success('food')
+// Okay, let

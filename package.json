@@ -7,5 +7,11 @@
   "license": "MIT",
   "dependencies": {
     "consola": "^2.15.3"
+  },
+  "bin": {
+    "1host": ".bin/1host.js"
+  },
+  "scripts":{
+      "start": "./.bin/1host.js"
   }
 }
