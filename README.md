@@ -12,7 +12,7 @@ Add 1host by adding a new script in package.json
 }
 ```
 Create a 1host.config.js
-```
+```js
 module.exports = {
   modules: [
   ],
