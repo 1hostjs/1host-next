@@ -9,7 +9,7 @@ module.exports = (modules, port) => {
       let content = "";
       let config = [];
       let type = '';
-      res.add = (newContent) => {
+      res.modify = (newContent) => {
         content = newContent;
       };
       res.start = (newContent, newConfig, newType = 'html') => {
