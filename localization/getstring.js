@@ -1,6 +1,7 @@
 module.exports = (key,locale) => {
     const path = require("path");
-    string = require(`./strings.${locale}`)
-    console.log(string)
+    const string = require(`./strings.${locale}`)
+    // uncomment the code below to test L10N system
+    // console.log(string)
     return string[key]
 }
