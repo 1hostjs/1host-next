@@ -1,5 +1,6 @@
-# 1host-next - _The next version of 1host_
-## Get started
+# ⚠️ This repository is a beta and under constant change. Use at your own risk.
+## 1host-next - _The next version of 1host_
+### Get started
 Install 1host
 ```bash
 npm install @1hostjs/hosting
