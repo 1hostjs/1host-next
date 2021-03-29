@@ -10,7 +10,7 @@ module.exports = async (req, res, code) => {
   });
 
   res.start(
-    await ejs.renderFile("./error.html", {
+    await ejs.renderFile("./error.ejs", {
       errornumber: code,
       datanum: datanum,
       datadesc: datadesc,
