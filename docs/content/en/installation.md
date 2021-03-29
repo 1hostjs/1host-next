@@ -1,7 +1,6 @@
 ---
 title: Installation
 description: "Install 1host.js"
-category: "Getting started"
 ---
 
 You can install 1host.js with Yarn or npm.
