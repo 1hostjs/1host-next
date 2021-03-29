@@ -1,0 +1,30 @@
+---
+title: "Build a module"
+description: "Tips on building a great module for 1host.js"
+category: "Usage"
+---
+
+- Make a folder in the modules folder called whatever you want
+- Add a file called `index.js`
+- Add the following code:
+
+```javascript
+module.exports = function (
+  host,
+  res,
+  req,
+  errornumber,
+  errordesc,
+  version,
+  ejs,
+  options
+) {
+  // ...
+};
+```
+
+- In the blank space add your own [http module](https://nodejs.dev/learn/the-nodejs-http-module) code, some select express res. functions, you can also get the host, get the error code, error description, get the version, and use ejs.
+- Import the module by adding the folder name to modules.json by adding `local://foldername` to moduleList and adding `"yoursite":{"modules":"foldername","config":{}` to websiteData
+- Run `index.js`
+- It should work!
+- Need help? Ask the community [here](https://github.com/1hostjs/help/discussions)
