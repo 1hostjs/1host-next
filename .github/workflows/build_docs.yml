@@ -22,8 +22,6 @@ jobs:
       - run: cd docs/
       - name: Install dependencies
         run: yarn --cwd ./docs
-      - name: Install tailwind
-        run: yarn add tailwindcss postcss@8 --cwd ./docs
       - name: Generate
         run: yarn run --cwd="./docs" build
 
