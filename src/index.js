@@ -12,6 +12,6 @@ try {
   importmodules(process.cwd());
 } catch (err) {
   console.clear();
-  console.log(formatting.fatalBox(l10n("starting.loadingerror", locale)));
+  console.log(formatting.fatalBox(l10n("loadingerror", locale)));
   consola.error(err);
 }
