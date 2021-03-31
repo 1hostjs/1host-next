@@ -21,7 +21,7 @@ module.exports = (modules, port) => {
         type = newType;
       };
       res.startFile = (path) => {
-        res.start(fs.readFileSync(path))
+        res.start(fs.readFileSync(path));
       };
       res.content = () => {
         return content;
