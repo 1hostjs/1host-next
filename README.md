@@ -1,4 +1,4 @@
-# 1host-next - _The next version of 1host_
+# 1host - _The easiest way to host websites_
 
 ## Get started
 
