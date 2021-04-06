@@ -1,6 +1,6 @@
 "scope: documentation":
 - /docs/*
-"scope: L10N:
+"scope: L10N":
 - /localization/*
 "scope: contributors":
 - /.github/CODEOWNERS
