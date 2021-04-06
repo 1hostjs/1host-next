@@ -8,7 +8,7 @@ currently being supported with security updates.
 | Version | Supported                           |
 | ------- | ----------------------------------- |
 | 2.x.x   | Fully supported                     |
-| < 2.0   | Supported for security patches only |
+| < 2.0   | Supported for security patches only, this may change. [See here.](https://github.com/1hostjs/hosting/discussions/19) |
 
 ## Reporting a Vulnerability
 
