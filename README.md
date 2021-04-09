@@ -27,7 +27,7 @@ module.exports = {
 };
 ```
 
-*More info can be found on [the wiki](https://github.com/1hostjs/hosting/wiki/Installation).*
+_More info can be found on [the wiki](https://github.com/1hostjs/hosting/wiki/Installation)._
 
 ## Contributors
 
