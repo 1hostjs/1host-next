@@ -27,6 +27,8 @@ module.exports = {
 };
 ```
 
+*More info can be found on [the wiki](https://github.com/1hostjs/hosting/wiki/Installation.*
+
 ## Contributors
 
 Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
