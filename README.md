@@ -27,7 +27,7 @@ module.exports = {
 };
 ```
 
-_More info can be found on [the docs](https://1host.js.org)._
+_More info can be found on [the docs](https://1host.js.org/installation/)._
 
 ## Contributors
 
