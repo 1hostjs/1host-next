@@ -1,9 +1,8 @@
-module.exports = {
-  starting: "Starting...",
-  loadingerror: "Yikes, we ran into an error running your project\n",
-  message: "1host.js Message",
-  success: "✔ 1host.js Success",
-  warning: "⚠ 1host.js Warning",
-  error: "✖ 1host.js Error",
-  fatalerror: "✖ 1host.js Error",
-};
+const { t } = require("@transifex/native");
+t("Starting...");
+t("Yikes, we ran into an error running your project\n");
+t("1host.js Message");
+t("✔ 1host.js Success");
+t("⚠ 1host.js Warning");
+t("✖ 1host.js Error");
+t("✖ 1host.js Fatal Error");

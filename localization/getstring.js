@@ -1,14 +1,11 @@
 module.exports = (key, locale) => {
-  const path = require("path");
-  if (path.existsSync(`./strings.${locale}.js`)) {
-    const string = require(`./strings.${locale}`);
-  } else {
-    console.warn(
-      "1host.js isn't avalible in the system language, using english."
-    );
-    const string = require(`./strings.en`);
-  }
-  // uncomment the code below to test L10N system
-  // console.log(string)
-  return string[key];
+  const { tx, t } = require("@transifex/native");
+  tx.init({
+    token: "1/c885c73e0f89b3c7910d866455dbf5809465ca8e",
+    sourceLocale: "en",
+  });
+  tx.setCurrentLocale(locale).catch((err) => {
+    tx.setCurrentLocale("en");
+  });
+  return t(key);
 };

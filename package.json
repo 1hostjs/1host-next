@@ -6,6 +6,8 @@
   "author": "wgyt",
   "license": "MIT",
   "dependencies": {
+    "@transifex/cli": "^0.11.2",
+    "@transifex/native": "^0.11.2",
     "boxen": "^5.0.1",
     "chalk": "^4.1.0",
     "consola": "^2.15.3",
@@ -17,7 +19,8 @@
   },
   "scripts": {
     "start": "1host",
-    "lint": "prettier --write \"**/*.**\""
+    "lint": "prettier --write \"**/*.**\"",
+    "trans": "txjs-cli push --purge \"localization/strings.en.js\""
   },
   "devDependencies": {
     "prettier": "^2.2.1"
