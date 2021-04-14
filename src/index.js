@@ -6,7 +6,7 @@ try {
   console.log(formatting.successBox(l10n("Starting...", locale)));
   //o.err()
   importdata = require("./import")(process.cwd());
-  require("./serve")(modules, config.port);
+  require("./serve")(importdata[0], importdata[1]);
 } catch (err) {
   console.clear();
   console.log(
