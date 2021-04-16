@@ -1,75 +1,77 @@
 export default (modules, port) => {
-  import http from "http";
-  import fs from "fs";
-  console.log("Serving");
-  function start(usePort) {
-    http
-      .createServer(function (req, res) {
-        const host = req.headers.host; // this is the host
-        res.setHeader("X-Powered-By", "1hostjs"); // this is for credit
-        let content = "";
-        let config = [];
-        let type = "text/plain";
-        res.modify = (newContent) => {
-          content = newContent;
-        };
-        res.start = (newContent, newConfig, newType = "text/html") => {
-          content = "";
-          content = newContent;
-          config.push(newConfig);
+  import("http").then((http) => {
+    import("fs").then((fs) => {
+      console.log("Serving");
+      function start(usePort) {
+        http
+          .createServer(function (req, res) {
+            const host = req.headers.host; // this is the host
+            res.setHeader("X-Powered-By", "1hostjs"); // this is for credit
+            let content = "";
+            let config = [];
+            let type = "text/plain";
+            res.modify = (newContent) => {
+              content = newContent;
+            };
+            res.start = (newContent, newConfig, newType = "text/html") => {
+              content = "";
+              content = newContent;
+              config.push(newConfig);
 
-          type = newType;
-        };
-        res.startFile = (path) => {
-          res.start(fs.readFileSync(path));
-        };
-        res.content = () => {
-          return content;
-        };
-        res.type = () => {
-          return type;
-        };
-        try {
-          for (module of modules) {
-            if (host === module.host) {
-              module.module(req, res, host, module.config);
+              type = newType;
+            };
+            res.startFile = (path) => {
+              res.start(fs.readFileSync(path));
+            };
+            res.content = () => {
+              return content;
+            };
+            res.type = () => {
+              return type;
+            };
+            try {
+              for (module of modules) {
+                if (host === module.host) {
+                  module.module(req, res, host, module.config);
+                }
+              }
+              if (content == "") {
+                modules.errorHandler.module(
+                  req,
+                  res,
+                  host,
+                  modules.errorHandler.config,
+                  404
+                );
+              }
+              console.log("Type:" + type);
+              res.setHeader("Content-Type", type);
+              res.write(content);
+
+              res.end();
+            } catch {
+              modules.errorHandler.module(
+                req,
+                res,
+                host,
+                modules.errorHandler.config,
+                500
+              );
+              res.write(content);
             }
-          }
-          if (content == "") {
-            modules.errorHandler.module(
-              req,
-              res,
-              host,
-              modules.errorHandler.config,
-              404
-            );
-          }
-          console.log("Type:" + type);
-          res.setHeader("Content-Type", type);
-          res.write(content);
+          })
 
-          res.end();
-        } catch {
-          modules.errorHandler.module(
-            req,
-            res,
-            host,
-            modules.errorHandler.config,
-            500
-          );
-          res.write(content);
+          .listen(usePort);
+      }
+      try {
+        start(port);
+      } catch (err) {
+        if (err.code == "EADDRINUSE") {
+          start(0);
+        } else {
+          throw err;
         }
-      })
-
-      .listen(usePort);
-  }
-  try {
-    start(port);
-  } catch (err) {
-    if (err.code == "EADDRINUSE") {
-      start(0);
-    } else {
-      throw err;
-    }
-  }
+      }
+    });
+  });
 };
