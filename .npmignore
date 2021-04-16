@@ -1,0 +1,9 @@
+node_modules
+.npmrc
+.env
+.github
+docs
+.all-contributorsrc
+tests
+.prettierignore
+SECURITY.md
