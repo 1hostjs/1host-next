@@ -1,17 +1,19 @@
-const formatting = require("./formatting");
-const consola = require("consola");
-const importmodules = require("./import");
-const l10n = require("../localization/getstring");
-const osLocale = require("os-locale");
-const locale = osLocale.sync();
+import { successBox, fatalBox } from "./formatting.js";
+import consola from "consola";
+import l10n from "../localization/getstring.js";
+import osloc from "os-locale"
+import importmodules from "./import.js"
+import serve from "./serve.js"
+const locale = osloc.sync();
 try {
-  console.log(formatting.successBox(l10n("Starting...", locale)));
+  console.log(successBox(l10n("Starting...", locale)));
   //o.err()
-  importmodules(process.cwd());
+  var data = importmodules(process.cwd());
+  serve(data[0],data[1])
 } catch (err) {
   console.clear();
   console.log(
-    formatting.fatalBox(
+    fatalBox(
       l10n("Yikes, we ran into an error running your project\n", locale)
     )
   );

@@ -1,9 +1,8 @@
-const consola = require("consola");
-module.exports = (modules, port) => {
-  const http = require("http");
-  const fs = require("fs");
+export default (modules, port) => {
+  import http from "http";
+  import fs from "fs";
   console.log("Serving");
-  function start(usePort = port) {
+  function start(usePort) {
     http
       .createServer(function (req, res) {
         const host = req.headers.host; // this is the host
@@ -32,16 +31,32 @@ module.exports = (modules, port) => {
         };
         try {
           for (module of modules) {
-            module.module(req, res);
+            if (host === module.host) {
+              module.module(req, res, host, module.config);
+            }
           }
-          if (content == "") modules.errorHandler.module(req, res, 404);
+          if (content == "") {
+            modules.errorHandler.module(
+              req,
+              res,
+              host,
+              modules.errorHandler.config,
+              404
+            );
+          }
           console.log("Type:" + type);
           res.setHeader("Content-Type", type);
           res.write(content);
 
           res.end();
         } catch {
-          modules.errorHandler.module(req, res, 500);
+          modules.errorHandler.module(
+            req,
+            res,
+            host,
+            modules.errorHandler.config,
+            500
+          );
           res.write(content);
         }
       })

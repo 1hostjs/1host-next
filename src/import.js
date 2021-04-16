@@ -1,8 +1,9 @@
-module.exports = (dir) => {
-  const path = require("path");
-  const config = require(path.join(dir, "1host.config.js"));
+import path from 'path';
+export default (dir) => {
+  let cfng = path.join(dir,"1host.config.js");
+  import cfng from cfng;
   let modules = [];
-  for (module of config.modules) {
+  for (module of cfng.modules) {
     if (typeof module.module == "function") {
       if (!module.errorHandler)
         modules.push({ module: module.module, data: module });
@@ -14,5 +15,5 @@ module.exports = (dir) => {
         modules.errorHandler = { module: require(module.module), data: module };
     }
   }
-  require("./serve")(modules, config.port);
+  return [modules, cfng.port]
 };
