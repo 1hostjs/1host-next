@@ -1,5 +1,5 @@
 export default (modules, port) => {
-  import http from 'http';
+  import http from "http";
   import fs from "fs";
   console.log("Serving");
   function start(usePort) {
