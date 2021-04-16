@@ -10,8 +10,7 @@ export default (dir) => {
     var i = 0;
     for (i of config.default.modules) {
       if (typeof i.module == "function") {
-        if (!i.errorHandler)
-          modules.push({ module: i.module, data: i });
+        if (!i.errorHandler) modules.push({ module: i.module, data: i });
         else modules.errorHandler = { module: i.module, data: i };
       } else if (typeof i.module == "string") {
         if (!i.errorHandler)
