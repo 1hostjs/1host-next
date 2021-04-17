@@ -7,7 +7,7 @@ export default (dir, successBox, fatalBox, l10n, locale) => {
   const moduleloc = dir + e + "1host.config.js";
   var moduless;
   var portss;
-  import(moduleloc)
+  return import(moduleloc)
     .then((config) => {
       var modules = [];
       var i = 0;
@@ -25,8 +25,7 @@ export default (dir, successBox, fatalBox, l10n, locale) => {
             };
         }
       }
-      moduless = modules;
-      portss = config.default.port;
+      return [modules, config.default.port];
     })
     .catch((err) => {
       console.clear();
@@ -37,5 +36,4 @@ export default (dir, successBox, fatalBox, l10n, locale) => {
       );
       consola.error(err);
     });
-  return [moduless, portss];
 };
