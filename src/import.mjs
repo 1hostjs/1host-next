@@ -1,4 +1,4 @@
-export default (dir) => {
+export default (dir,successBox, fatalBox,l10n,locale) => {
   if (process.platform === "win32") {
     var e = "\\";
   } else {
@@ -26,6 +26,12 @@ export default (dir) => {
     }
     moduless = modules;
     portss = config.default.port;
+  }).catch((err)=>{
+    console.clear();
+    console.log(
+      fatalBox(l10n("Yikes, we ran into an error running your project\n", locale))
+    );
+    consola.error(err);
   });
   return [moduless, portss];
 };
