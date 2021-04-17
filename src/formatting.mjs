@@ -33,14 +33,6 @@ function foldLines(
   return indentLines(wrapAnsi(string, charsPerLine), spaces, firstLineSpaces);
 }
 
-function colorize(text) {
-  return text
-    .replace(/\[[^ ]+]/g, (m) => grey(m))
-    .replace(/<[^ ]+>/g, (m) => green(m))
-    .replace(/ (-[-\w,]+)/g, (m) => bold(m))
-    .replace(/`([^`]+)`/g, (_, m) => bold.cyan(m));
-}
-
 function box(message, title, options) {
   return (
     boxen(
