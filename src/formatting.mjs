@@ -2,14 +2,12 @@ import wrapAnsi from "wrap-ansi";
 import chalk from "chalk";
 import boxen from "boxen";
 import l10n from "../localization/getstring.mjs";
-import { sync } from "os-locale";
-const locale = sync();
+import osLocale from "os-locale";
+const locale = osLocale.sync();
 const maxCharsPerLine = () => ((process.stdout.columns || 100) * 80) / 100;
-
 function indent(count, chr = " ") {
   return chr.repeat(count);
 }
-
 function indentLines(string, spaces, firstLineSpaces) {
   const lines = Array.isArray(string) ? string : string.split("\n");
   let s = "";
@@ -23,7 +21,6 @@ function indentLines(string, spaces, firstLineSpaces) {
   }
   return s;
 }
-
 function foldLines(
   string,
   spaces,
@@ -32,7 +29,6 @@ function foldLines(
 ) {
   return indentLines(wrapAnsi(string, charsPerLine), spaces, firstLineSpaces);
 }
-
 function box(message, title, options) {
   return (
     boxen(
@@ -53,7 +49,6 @@ function box(message, title, options) {
     ) + "\n"
   );
 }
-
 function successBox(message, title) {
   return box(
     message,
@@ -63,7 +58,6 @@ function successBox(message, title) {
     }
   );
 }
-
 function warningBox(message, title) {
   return box(
     message,
@@ -73,17 +67,22 @@ function warningBox(message, title) {
     }
   );
 }
-
 function errorBox(message, title) {
   return box(message, title || chalk.red(l10n("✖ 1host.js Error", locale)), {
     borderColor: "red",
   });
 }
-
 function fatalBox(message, title) {
   return errorBox(
     message,
     title || chalk.red(l10n("✖ 1host.js Fatal Error", locale))
   );
 }
-export { fatalBox, successBox, warningBox };
+export { fatalBox };
+export { successBox };
+export { warningBox };
+export default {
+  fatalBox,
+  successBox,
+  warningBox,
+};

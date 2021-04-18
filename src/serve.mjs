@@ -1,6 +1,8 @@
-module.exports = (moduless, port) => {
-  const http = require("http");
-  const fs = require("fs");
+import consola from "consola";
+import http from "http";
+import fs from "fs";
+export default (mdls, port) => {
+  const modules = mdls
   console.log("Serving");
   function start(usePort = port) {
     http
@@ -17,7 +19,6 @@ module.exports = (moduless, port) => {
           content = "";
           content = newContent;
           config.push(newConfig);
-
           type = newType;
         };
         res.startFile = (path) => {
@@ -30,26 +31,23 @@ module.exports = (moduless, port) => {
           return type;
         };
         try {
-          for (module of moduless) {
+          for (module of modules) {
             module.module(req, res);
           }
-          if (content == "") moduless.errorHandler.module(req, res, 404);
+          if (content == "") modules.errorHandler.module(req, res, 404);
           console.log("Type:" + type);
           res.setHeader("Content-Type", type);
           res.write(content);
-
           res.end();
-        } catch (err) {
-          console.error(err);
-          moduless.errorHandler.module(req, res, 500);
+        } catch {
+          modules.errorHandler.module(req, res, 500);
           res.write(content);
         }
       })
-
       .listen(usePort);
   }
   try {
-    start(port);
+    start();
   } catch (err) {
     if (err.code == "EADDRINUSE") {
       start(0);

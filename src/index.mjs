@@ -3,7 +3,7 @@ import consola from "consola";
 import l10n from "../localization/getstring.mjs";
 import osloc from "os-locale";
 import importmodules from "./import.mjs";
-import serve from "./serve.js";
+import serve from "./serve.mjs";
 const locale = osloc.sync();
 
 try {
