@@ -2,6 +2,7 @@
   "name": "@1hostjs/hosting",
   "version": "2.0.0",
   "main": "index.js",
+  "type":"module",
   "repository": "https://github.com/1hostjs/1host-next.git",
   "author": "wgyt",
   "license": "MIT",
@@ -14,7 +15,7 @@
     "wrap-ansi": "^8.0.0"
   },
   "bin": {
-    "1host": "bin/1host.mjs"
+    "1host": "bin/1host.js"
   },
   "scripts": {
     "lint": "prettier --write \"**/*.**\"",
