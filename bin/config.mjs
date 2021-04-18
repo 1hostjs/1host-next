@@ -6,7 +6,7 @@ import path from "path";
 import fs from "fs";
 const locale = osloc.sync();
 var title = l10n("1host.js Config", locale) || "1host.js Config";
-var portt
+var portt;
 var modules = [];
 console.log(
   formatting.successBox(l10n("Answer the prompts below", locale), title)
