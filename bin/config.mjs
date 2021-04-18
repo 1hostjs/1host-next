@@ -22,16 +22,13 @@ readline.question("Choose a port number:", (port) => {
       if (yn === "y") {
         // todo: add code here
       }
-      readline.question(
-        "Do you want do add another(y/n):",
-        (yn) => {
-          if (yn === "y") {
-            e();
-          } else {
-            readline.close();
-          }
+      readline.question("Do you want do add another(y/n):", (yn) => {
+        if (yn === "y") {
+          e();
+        } else {
+          readline.close();
         }
-      );
+      });
     });
   }
   e();
