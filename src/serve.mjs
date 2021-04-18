@@ -2,7 +2,7 @@ import consola from "consola";
 import http from "http";
 import fs from "fs";
 export default (mdls, port) => {
-  const modules = mdls
+  const modules = mdls;
   console.log("Serving");
   function start(usePort = port) {
     http

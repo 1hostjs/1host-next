@@ -3,7 +3,7 @@ export default async (dir) => {
   const cfg = import(path.join(dir, "1host.config.js"));
   var config = await cfg;
   let modules = [];
-  let module
+  let module;
   for (module of config.default.modules) {
     if (typeof module.module == "function") {
       if (!module.errorHandler)
@@ -15,6 +15,6 @@ export default async (dir) => {
         modules.errorHandler = { module: require(module.module), data: module };
     }
   }
-  console.error([modules, config.default.port])
+  console.error([modules, config.default.port]);
   return [modules, config.default.port];
 };
