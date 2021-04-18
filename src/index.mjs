@@ -5,11 +5,11 @@ import osloc from "os-locale";
 import importmodules from "./import.mjs";
 import serve from "./serve.mjs";
 const locale = osloc.sync();
-
+const dir = process.argv[3] || process.cwd();
 try {
   console.log(successBox(l10n("Starting...", locale)));
   //o.err()
-  var data = importmodules(process.cwd(), successBox, fatalBox, l10n, locale);
+  var data = importmodules(dir, successBox, fatalBox, l10n, locale);
   var sdata = await data;
   serve(sdata[0], sdata[1]);
 } catch (err) {
