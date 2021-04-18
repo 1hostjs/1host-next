@@ -7,7 +7,7 @@ import fs from "fs";
 const locale = osloc.sync();
 var title = l10n("1host.js Config", locale) || "1host.js Config";
 var config = {};
-config.modules = [];
+var modules = [];
 console.log(
   formatting.successBox(l10n("Answer the prompts below", locale), title)
 );
@@ -27,7 +27,7 @@ readline.question("Choose a port number:", (port) => {
             if (yn === "y") {
               cfgmdle.errorHandler = true;
             }
-            config.modules.push(cfgmdle);
+            modules.push(cfgmdle);
             readline.question("Do you want do add another(y/n):", (yn) => {
               if (yn === "y") {
                 e();
@@ -46,7 +46,7 @@ readline.question("Choose a port number:", (port) => {
   const dir = process.argv[3] || process.cwd();
   fs.writeFileSync(
     path.join(dir, "1host.config.js"),
-    `module.exports={port:${config.port},modules:${config.modules}}`,
+    `module.exports={port:${config.port},modules:${modules}}`,
     {}
   );
 });
