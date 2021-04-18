@@ -1,6 +1,6 @@
 import { createInterface } from "readline";
-import formatting from "../src/formatting.mjs";
-import l10n from "../localization/getstring.mjs";
+import formatting from "../src/formatting.js";
+import l10n from "../localization/getstring.js";
 import osloc from "os-locale";
 import path from "path";
 import fs from "fs";
@@ -8,6 +8,8 @@ const locale = osloc.sync();
 var title = l10n("1host.js Config", locale);
 var portt;
 var modules = [];
+formatting.successBox(l10n("Answer the prompts below", locale), title)
+console.warn('the cli ISN\'T finished, modules save to your config file. You will need to manually configure your modules.')
 console.log(
   formatting.successBox(l10n("Answer the prompts below", locale), title)
 );

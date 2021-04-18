@@ -1,9 +1,9 @@
-import { successBox, fatalBox } from "./formatting.mjs";
+import { successBox, fatalBox } from "./formatting.js";
 import consola from "consola";
-import l10n from "../localization/getstring.mjs";
+import l10n from "../localization/getstring.js";
 import osloc from "os-locale";
-import importmodules from "./import.mjs";
-import serve from "./serve.mjs";
+import importmodules from "./import.js";
+import serve from "./serve.js";
 const locale = osloc.sync();
 const dir = process.argv[3] || process.cwd();
 try {
