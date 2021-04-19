@@ -7,9 +7,8 @@ import fs from "fs";
 const locale = osloc.sync();
 var title = l10n("1host.js Config", locale);
 var portt;
-var modules = [];
+var modules = new Array();
 var cfgmdle = {};
-
 formatting.successBox(l10n("Answer the prompts below", locale), title);
 console.warn(
   l10n(
@@ -65,7 +64,7 @@ readline.question(l10n("Choose a port number:", locale), (port) => {
       }
     );
   }
-  e();
+  e()
   const dir = process.argv[3] || process.cwd();
   fs.writeFileSync(
     path.join(dir, "1host.config.js"),
