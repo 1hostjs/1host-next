@@ -25,6 +25,15 @@ const readline = { createInterface }.createInterface({
 });
 readline.question(l10n("Choose a port number:", locale), (port) => {
   portt = port;
+  function writedata(){
+    const dir = process.argv[3] || process.cwd();
+    fs.writeFileSync(
+      path.join(dir, "1host.config.js"),
+      `module.exports={port:${portt}}`,
+      {}
+    );
+    // todo: add for loop so we can write the variable modules to the config file
+  }
   function e() {
     readline.question(
       l10n("Do you want to add a module(y/n):", locale),
@@ -52,6 +61,7 @@ readline.question(l10n("Choose a port number:", locale), (port) => {
                       e();
                     } else {
                       readline.close();
+                      writedata()
                     }
                   }
                 );
@@ -60,15 +70,10 @@ readline.question(l10n("Choose a port number:", locale), (port) => {
           });
         } else {
           readline.close();
+          writedata()
         }
       }
     );
   }
-  e()
-  const dir = process.argv[3] || process.cwd();
-  fs.writeFileSync(
-    path.join(dir, "1host.config.js"),
-    `module.exports={port:${portt},modules:${modules}}`,
-    {}
-  );
+  e();
 });
