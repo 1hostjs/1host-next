@@ -184,10 +184,10 @@
   resolved "https://registry.yarnpkg.com/@oclif/screen/-/screen-1.0.4.tgz#b740f68609dfae8aa71c3a6cab15d816407ba493"
   integrity sha512-60CHpq+eqnTxLZQ4PGHYNwUX572hgpMHGPtTWMjdTMsAvlm69lZV/4ly6O3sAYkomo4NggGcomrDpBe34rxUqw==
 
-"@transifex/cli@^0.11.2":
-  version "0.11.2"
-  resolved "https://registry.yarnpkg.com/@transifex/cli/-/cli-0.11.2.tgz#ddbeb5c63c4b18e531f71780225f91279f55ba43"
-  integrity sha512-ezIRiqFnXCpY1/lTEvugmLvUHbKtbp0CgHyBKVsjtqSSZOWyOPfU3kpew1UwqhEQd6LbhpXiYW1Du2ZoBlkjLg==
+"@transifex/cli@^0.12.1":
+  version "0.12.1"
+  resolved "https://registry.yarnpkg.com/@transifex/cli/-/cli-0.12.1.tgz#d994e854dbdd1e9edbeb93ab4da50c91ba06971d"
+  integrity sha512-wXR15S21Dycj8DwVrNCrl2AFXUk8njd3wWWfcb7S8+Es2RMRA6PPXSCKYcfcGXccpE9eDieKLDLoMQOofoIDmw==
   dependencies:
     "@babel/parser" "^7.13.10"
     "@babel/traverse" "^7.13.0"
@@ -195,22 +195,14 @@
     "@oclif/config" "^1.17.0"
     "@oclif/errors" "^1.3.4"
     "@oclif/plugin-help" "^3.2.1"
-    "@transifex/native" "^0.11.2"
+    "@transifex/native" "^0.12.1"
+    angular-html-parser "^1.7.1"
     axios "^0.21.1"
     cli-ux "^5.5.1"
     colors "^1.4.0"
     glob "^7.1.6"
     lodash "^4.17.21"
     shelljs "^0.8.4"
-
-"@transifex/native@^0.11.2":
-  version "0.11.2"
-  resolved "https://registry.yarnpkg.com/@transifex/native/-/native-0.11.2.tgz#e48f356596f9119bac2adab0b42db4f5ca807a9d"
-  integrity sha512-9oaxc7fotcxQN/6z28B9hZUuReK6sR8vvwy+svcF+f7a+5eH905Rj3zkIjcTWUTWn7TFNOWUQqsVjjNfG3a74A==
-  dependencies:
-    axios "^0.21.1"
-    md5 "^2.3.0"
-    messageformat "^2.3.0"
 
 "@transifex/native@^0.12.1":
   version "0.12.1"
@@ -220,6 +212,13 @@
     axios "^0.21.1"
     md5 "^2.3.0"
     messageformat "^2.3.0"
+
+angular-html-parser@^1.7.1:
+  version "1.8.0"
+  resolved "https://registry.yarnpkg.com/angular-html-parser/-/angular-html-parser-1.8.0.tgz#bd315b74e8069135a046902078c73d959d1cc51c"
+  integrity sha512-n5ZowjJJs1OPG3DHDSyUXZvscQzy7uQG227ncL1NzbJEPzfb2XtBZ9qT0PW7cbD7MViho3ijawXoRLCM0ih1rw==
+  dependencies:
+    tslib "^1.9.3"
 
 ansi-align@^3.0.0:
   version "3.0.0"
