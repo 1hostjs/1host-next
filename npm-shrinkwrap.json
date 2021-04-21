@@ -459,12 +459,25 @@
         "glob": "^7.1.6",
         "lodash": "^4.17.21",
         "shelljs": "^0.8.4"
+      },
+      "dependencies": {
+        "@transifex/native": {
+          "version": "0.11.2",
+          "resolved": "https://registry.npmjs.org/@transifex/native/-/native-0.11.2.tgz",
+          "integrity": "sha512-9oaxc7fotcxQN/6z28B9hZUuReK6sR8vvwy+svcF+f7a+5eH905Rj3zkIjcTWUTWn7TFNOWUQqsVjjNfG3a74A==",
+          "dev": true,
+          "requires": {
+            "axios": "^0.21.1",
+            "md5": "^2.3.0",
+            "messageformat": "^2.3.0"
+          }
+        }
       }
     },
     "@transifex/native": {
-      "version": "0.11.2",
-      "resolved": "https://registry.npmjs.org/@transifex/native/-/native-0.11.2.tgz",
-      "integrity": "sha512-9oaxc7fotcxQN/6z28B9hZUuReK6sR8vvwy+svcF+f7a+5eH905Rj3zkIjcTWUTWn7TFNOWUQqsVjjNfG3a74A==",
+      "version": "0.12.1",
+      "resolved": "https://registry.npmjs.org/@transifex/native/-/native-0.12.1.tgz",
+      "integrity": "sha512-ZDaXGJs1smh40aBnRyI5lWckcYrJkQl4S/uf7l/aepZluZdQtW1JC4H7I9eQ+Epb+yz7Oadze6L4xbIqjblZ1A==",
       "requires": {
         "axios": "^0.21.1",
         "md5": "^2.3.0",
