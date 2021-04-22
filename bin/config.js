@@ -43,7 +43,9 @@ readline.question(l10n("Choose a port number:", locale), (port) => {
       l10n("Do you want to configure https support(y/n):", locale),
       (yn) => {
         if (yn === "y") {
-          // todo: add config
+          // todo: ask for port
+          // todo: ask for key path
+          // todo: ask for cert path
         } else {
           https.on = false
           readline.close();
