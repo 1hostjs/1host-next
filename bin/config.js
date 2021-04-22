@@ -9,6 +9,7 @@ var title = l10n("1host.js Config", locale);
 var portt;
 var modules = new Array();
 var cfgmdle = {};
+var https = {};
 formatting.successBox(l10n("Answer the prompts below", locale), title);
 console.log(
   formatting.successBox(l10n("Answer the prompts below", locale), title)
@@ -35,7 +36,21 @@ readline.question(l10n("Choose a port number:", locale), (port) => {
         `{"module":"${data.module}","errorHandler":${data.errorHandler}},`
       );
     }
-    fs.appendFileSync(path.join(dir, "1host.config.js"), "]}");
+    fs.appendFileSync(path.join(dir, "1host.config.js"), `],${JSON.stringify(https)},}`);
+  }
+  function httpsdata() {
+    readline.question(
+      l10n("Do you want to configure https support(y/n):", locale),
+      (yn) => {
+        if (yn === "y") {
+          // todo: add config
+        } else {
+          https.on = false
+          readline.close();
+          writedata();
+        }
+      }
+    );
   }
   function e() {
     readline.question(
@@ -57,6 +72,7 @@ readline.question(l10n("Choose a port number:", locale), (port) => {
                     if (yn === "y") {
                       e();
                     } else {
+                      httpsdata();
                       readline.close();
                       writedata();
                     }
@@ -66,6 +82,7 @@ readline.question(l10n("Choose a port number:", locale), (port) => {
             );
           });
         } else {
+          httpsdata();
           readline.close();
           writedata();
         }
