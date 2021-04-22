@@ -43,24 +43,28 @@ export default (mdls, port, httpsdata) => {
     }
   }
   function start(usePort = port, httpsdata = httpsdata) {
-    http.createServer(function (req, res) {
-      serverfunction(req, res)
-    }).listen(usePort);
-    if(httpsdata[0]){
+    http
+      .createServer(function (req, res) {
+        serverfunction(req, res);
+      })
+      .listen(usePort);
+    if (httpsdata[0]) {
       const options = {
         key: fs.readFileSync(httpsdata[3]),
-        cert: fs.readFileSync(httpsdata[2])
+        cert: fs.readFileSync(httpsdata[2]),
       };
-      https.createServer(options, (req, res) => {
-        serverfunction(req, res)
-      }).listen(httpsdata[1]);      
+      https
+        .createServer(options, (req, res) => {
+          serverfunction(req, res);
+        })
+        .listen(httpsdata[1]);
     }
   }
   try {
     start(port, httpsdata);
   } catch (err) {
     if (err.code == "EADDRINUSE") {
-      start(0, [httpsdata[0],0,httpsdata[2],httpsdata[3]]);
+      start(0, [httpsdata[0], 0, httpsdata[2], httpsdata[3]]);
     } else {
       throw err;
     }

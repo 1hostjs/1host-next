@@ -17,9 +17,14 @@ export default async (dir) => {
   }
   var https;
   if (config.default.https.on) {
-    https = [true, config.default.https.port, config.default.https.cert, config.default.https.key];
+    https = [
+      true,
+      config.default.https.port,
+      config.default.https.cert,
+      config.default.https.key,
+    ];
   } else {
     https = [false, null, null, null];
   }
-  return [modules, config.default.port,https];
+  return [modules, config.default.port, https];
 };

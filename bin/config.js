@@ -36,7 +36,10 @@ readline.question(l10n("Choose a port number:", locale), (port) => {
         `{"module":"${data.module}","errorHandler":${data.errorHandler}},`
       );
     }
-    fs.appendFileSync(path.join(dir, "1host.config.js"), `],${JSON.stringify(https)},}`);
+    fs.appendFileSync(
+      path.join(dir, "1host.config.js"),
+      `],${JSON.stringify(https)},}`
+    );
   }
   function httpsdata() {
     readline.question(
@@ -47,7 +50,7 @@ readline.question(l10n("Choose a port number:", locale), (port) => {
           // todo: ask for key path
           // todo: ask for cert path
         } else {
-          https.on = false
+          https.on = false;
           readline.close();
           writedata();
         }
