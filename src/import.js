@@ -13,7 +13,7 @@ export default async (dir) => {
       }
     } else if (typeof module.module == "string") {
       if (!module.errorHandler) {
-        modules.push({ module: require(module.module), data: module });     
+        modules.push({ module: require(module.module), data: module });
       } else {
         modules.errorHandler = { module: require(module.module), data: module };
       }
