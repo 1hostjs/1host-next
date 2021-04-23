@@ -1,6 +1,6 @@
 import path from "path";
 export default async (dir) => {
-  const cfg = import(path.join(dir, "1host.config.js"));
+  const cfg = import(path.join("file:///", dir, "1host.config.js"));
   var config = await cfg;
   let modules = [];
   let module;
