@@ -6,7 +6,8 @@
     "apiUrl": "https://api.github.com/repos"
   },
   "header": {
-    "logo": true
+    "logo": true,
+    "title": false
   },
   "twitter": "wgytcraft",
   "colors": {
