@@ -36,21 +36,22 @@ export default (mdls, port, httpsdata) => {
           module.data.config === null;
         }
         if (module.data.host == undefined) {
-          module.module(req, res, module.data.config);
-        }
-        if (host == module.data.host) {
-          module.module(req, res, module.data.config);
+          if (!module.data.hostRegex === undefined) {
+            rgx = new RegExp(module.data.hostRegex);
+            if (rgx.test(host)) {
+              module.module(req, res, module.data.config);
+            }
+          } else {
+            module.module(req, res, module.data.config);
+          }
+        } else {
+          if (host === module.data.host) {
+            module.module(req, res, module.data.config);
+          }
         }
       }
       if (content == "") {
-        modules.errorHandler.module(
-          req,
-          res,
-          404,
-          "empty page",
-          modules.errorHandler.data.config
-        );
-        return true;
+        throw "empty page";
       }
       res.setHeader("Content-Type", type);
       res.write(content);
