@@ -1,8 +1,9 @@
 import { createInterface } from "readline";
-import formatting from "../src/formatting.js";
-import l10n from "../localization/getstring.js";
-import osloc from "os-locale";
 import path from "path";
+const l10nn = await import(path.join('..','localization','getstring.js'));
+const l10n = l10nn.default
+const formatting =  await import(path.join('..','src','formatting.js'));
+import osloc from "os-locale";
 import fs from "fs";
 const locale = osloc.sync();
 var title = l10n("1host.js Config", locale);

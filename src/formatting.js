@@ -1,7 +1,9 @@
 import wrapAnsi from "wrap-ansi";
 import chalk from "chalk";
 import boxen from "boxen";
-import l10n from "../localization/getstring.js";
+import path from "path";
+const l10nn = await import(path.join('..','localization','getstring.js'));
+const l10n = l10nn.default
 import osLocale from "os-locale";
 const locale = osLocale.sync();
 const maxCharsPerLine = () => ((process.stdout.columns || 100) * 80) / 100;
