@@ -7,14 +7,14 @@ t("⚠ 1host.js Warning");
 t("✖ 1host.js Error");
 t("✖ 1host.js Fatal Error");
 t("1host.js Help");
-t(`Commands:
-> start: starts 1host.js
-  >> args: directory: changes the directory
-  >> usage: 1host start < directory (optional) >
-> config: changes the config file
-  >> args: directory: changes the directory
-  >> usage: 1host config < directory (optional) >
-`);
+t('Commands: \n\
+> start: starts 1host.js \n\
+  >> args: directory: changes the directory \n\
+  >> usage: 1host start < directory (optional) > \n\
+> config: changes the config file \n\
+  >> args: directory: changes the directory \n\
+  >> usage: 1host config < directory (optional) > \n
+');
 t("1host.js Config");
 t("Answer the prompts below");
 t("Choose a port number:");
