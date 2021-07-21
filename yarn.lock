@@ -249,6 +249,15 @@
     axios "^0.21.1"
     md5 "^2.3.0"
 
+"@transifex/native@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@transifex/native/-/native-1.0.0.tgz#53a965a5b7a9645e129e7c4470130c5dec47fee7"
+  integrity sha512-0vtVIvB13gKyT4T99f67VW6/pifdvBJf5ofcXlKAEMGjCEf1yZkbSfPzP6y7V0nMcYpfU11SOE/2rhYDZScMYQ==
+  dependencies:
+    "@messageformat/core" "^3.0.0"
+    axios "^0.21.1"
+    md5 "^2.3.0"
+
 angular-html-parser@^1.7.1:
   version "1.8.0"
   resolved "https://registry.yarnpkg.com/angular-html-parser/-/angular-html-parser-1.8.0.tgz#bd315b74e8069135a046902078c73d959d1cc51c"
