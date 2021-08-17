@@ -35,7 +35,7 @@ function box(message, title, options) {
   return (
     boxen(
       [
-        title || chalk.white(l10n("1host.js Message", locale)),
+        title || chalk.white(l10n("1host Message", locale)),
         "",
         chalk.white(foldLines(message, 0, 0, maxCharsPerLine())),
       ].join("\n"),
@@ -54,7 +54,7 @@ function box(message, title, options) {
 function successBox(message, title) {
   return box(
     message,
-    title || chalk.green(l10n("✔ 1host.js Success", locale)),
+    title || chalk.green(l10n("✔ 1host Success", locale)),
     {
       borderColor: "green",
     }
@@ -63,21 +63,21 @@ function successBox(message, title) {
 function warningBox(message, title) {
   return box(
     message,
-    title || chalk.yellow(l10n("⚠ 1host.js Warning", locale)),
+    title || chalk.yellow(l10n("⚠ 1host Warning", locale)),
     {
       borderColor: "yellow",
     }
   );
 }
 function errorBox(message, title) {
-  return box(message, title || chalk.red(l10n("✖ 1host.js Error", locale)), {
+  return box(message, title || chalk.red(l10n("✖ 1host Error", locale)), {
     borderColor: "red",
   });
 }
 function fatalBox(message, title) {
   return errorBox(
     message,
-    title || chalk.red(l10n("✖ 1host.js Fatal Error", locale))
+    title || chalk.red(l10n("✖ 1host Fatal Error", locale))
   );
 }
 export { fatalBox };

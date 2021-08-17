@@ -6,7 +6,7 @@ const formatting = await import(path.join("..", "src", "formatting.js"));
 import osloc from "os-locale";
 import fs from "fs";
 const locale = osloc.sync();
-var title = l10n("1host.js Config", locale);
+var title = l10n("1host Config", locale);
 var portt;
 var modules = new Array();
 var cfgmdle = {};
