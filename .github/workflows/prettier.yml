@@ -3,13 +3,13 @@ on: [push, pull_request]
 
 jobs:
   format:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     steps:
       - uses: actions/checkout@v2.3.4
       - name: Setup Node.js
         uses: actions/setup-node@v2.4.0
         with:
-          node-version: 12.x
+          node-version: 14
       - name: Install Prettier
         run: npm install --global prettier
       - name: Check format
