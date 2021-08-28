@@ -2,25 +2,26 @@ on: [push, pull_request]
 name: Build, Test and maybe Publish
 jobs:
   publish:
-    name: publish
+    name: Publish
     runs-on: ubuntu-latest
+    if: github.event_name == 'push' && ( github.ref == 'refs/heads/master' || github.ref == 'refs/heads/main' )
     steps:
     - uses: actions/checkout@v2
-      name: checkout
-    - uses: actions/setup-node@v1
-      name: nodejs
+    - name: Cache node_modules
+      id: cache-modules
+      uses: actions/cache@v1
       with:
-        node-version: 16.x
-    - uses: mikeal/merge-release@master
-      name: releasse
+        path: node_modules
+        key: 12.x-${{ runner.OS }}-build-${{ hashFiles('package.json') }}
+    - name: Build
+      if: steps.cache-modules.outputs.cache-hit != 'true'
+      run: npm install
+    - name: Test
+      run: npm_config_yes=true npx best-test@latest
+
+    - name: Publish
+      uses: mikeal/merge-release@master
       env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          NPM_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-    - uses: actions/setup-node@v2
-      name: nodejs again
-      with:
-        node-version: 16.x
-        registry-url: 'https://npm.pkg.github.com'
-    - run: npm publish
-      env:
-        NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        NPM_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+    
