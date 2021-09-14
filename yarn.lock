@@ -344,15 +344,15 @@ balanced-match@^1.0.0:
   integrity sha512-3oSeUO0TMV67hN1AmbXsK4yaqU7tjiHlbxRDZOpH0KW9+CeX4bRAaX0Anxt0tx2MrpRpWwQaPwIlISEJhYU5Pw==
 
 boxen@^5.0.1:
-  version "5.1.0"
-  resolved "https://registry.yarnpkg.com/boxen/-/boxen-5.1.0.tgz#2ca8d7ffdd4e4e6158bc1584ae35de4d55fcc4c7"
-  integrity sha512-tibA+fVC5RtJm+qQxRLU4/GfuO1K0Zx6cTSxjc49h1px7AyZEjFx88aKJmwIo0a6RDSm2FG00s/odEQYoSltbQ==
+  version "5.1.1"
+  resolved "https://registry.yarnpkg.com/boxen/-/boxen-5.1.1.tgz#4faca6a437885add0bf8d99082e272d480814cd4"
+  integrity sha512-JtIQYts08AFAYGF4eSh3pUt3NQkYV/e75pRtQmAVTLNWR/1L7Bsswxlgzgk8nmLEM+gFszsIlA9BgD3XnSqp3g==
   dependencies:
     ansi-align "^3.0.0"
     camelcase "^6.2.0"
     chalk "^4.1.0"
     cli-boxes "^2.2.1"
-    string-width "^4.2.0"
+    string-width "^4.2.2"
     type-fest "^0.20.2"
     widest-line "^3.1.0"
     wrap-ansi "^7.0.0"
@@ -1054,7 +1054,7 @@ string-width@^3.0.0:
     is-fullwidth-code-point "^2.0.0"
     strip-ansi "^5.1.0"
 
-string-width@^4.0.0, string-width@^4.1.0, string-width@^4.2.0:
+string-width@^4.0.0, string-width@^4.1.0, string-width@^4.2.0, string-width@^4.2.2:
   version "4.2.2"
   resolved "https://registry.yarnpkg.com/string-width/-/string-width-4.2.2.tgz#dafd4f9559a7585cfba529c6a0a4f73488ebd4c5"
   integrity sha512-XBJbT3N4JhVumXE0eoLU9DCjcaF92KLNqTmFCnG1pf8duUxFGwtP6AD6nkjw9a3IdiRtL3E2w3JDiE/xi3vOeA==
