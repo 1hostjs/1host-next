@@ -220,7 +220,7 @@
   resolved "https://registry.yarnpkg.com/@oclif/screen/-/screen-1.0.4.tgz#b740f68609dfae8aa71c3a6cab15d816407ba493"
   integrity sha512-60CHpq+eqnTxLZQ4PGHYNwUX572hgpMHGPtTWMjdTMsAvlm69lZV/4ly6O3sAYkomo4NggGcomrDpBe34rxUqw==
 
-"@transifex/cli@^1.0.0":
+"@transifex/cli@^1.0.1":
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/@transifex/cli/-/cli-1.0.1.tgz#5f4b80a1503209c56bb70153e6c936ca76da08a6"
   integrity sha512-bJPPL0KwcoFZ/fKdsH1blDqMe4rJPkZHQ3UvNlqiPPJ5PUiBy2AAdr3lSdsg9ePwev3MOtn8JYiLZ5AV//tKIQ==
@@ -239,7 +239,7 @@
     glob "^7.1.6"
     lodash "^4.17.21"
     shelljs "^0.8.4"
-
+    
 "@transifex/native@^1.0.0", "@transifex/native@^1.0.1":
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/@transifex/native/-/native-1.0.1.tgz#9a3f471eaca1561071046c3a87afa16019153b66"
